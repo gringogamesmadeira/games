@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#160f06" />
+<title>Gringo Games</title>
+<meta name="description" content="Two bar games. One glass. Perfect Pour and Bar Tilt." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --stout:#160f06; --navy:#0f1526;
+  --amber:#e8a020; --gold:#f5c542;
+  --foam:#fbf3dc; --foam-dim:rgba(251,243,220,.62);
+  --hop:#8fb56a;
+  --line:rgba(251,243,220,.14);
+  --card:rgba(251,243,220,.05);
+  --font-display:'Fredoka',system-ui,sans-serif;
+  --font-body:'Outfit',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;}
+body{
+  font-family:var(--font-body);color:var(--foam);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #3a2a12 0%, rgba(58,42,18,0) 55%),
+    radial-gradient(90% 60% at 50% 115%, #241a3a 0%, rgba(36,26,58,0) 60%),
+    linear-gradient(180deg,#120b04 0%, #160f06 40%, #0f1526 100%);
+  background-attachment:fixed;
+  min-height:100dvh;-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;
+}
+.wrap{
+  width:100%;max-width:520px;margin:0 auto;flex:1;
+  display:flex;flex-direction:column;justify-content:space-between;gap:28px;
+  padding:calc(28px + env(safe-area-inset-top)) 20px calc(26px + env(safe-area-inset-bottom));
+}
+
+/* header */
+.head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-top:4vh;}
+.mark{
+  width:72px;height:72px;border-radius:22px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--gold),var(--amber));
+  box-shadow:0 12px 34px -8px rgba(232,160,32,.6), inset 0 1px 0 rgba(255,255,255,.4);
+  color:#2a1c06;
+}
+.mark svg{width:40px;height:40px;}
+.kicker{font-weight:600;letter-spacing:.42em;font-size:11px;color:var(--foam-dim);text-transform:uppercase;padding-left:.42em;}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(38px,11vw,52px);line-height:.95;letter-spacing:-.01em;}
+h1 .accent{color:var(--gold);}
+.tagline{color:var(--foam-dim);font-size:14.5px;line-height:1.55;max-width:30ch;}
+
+/* game cards */
+.games{display:flex;flex-direction:column;gap:12px;}
+.game{
+  display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+  padding:16px;border-radius:18px;background:var(--card);
+  box-shadow:inset 0 0 0 1px var(--line);
+  transition:transform .14s ease, background .2s ease, box-shadow .2s ease;
+}
+.game:hover{background:rgba(251,243,220,.08);box-shadow:inset 0 0 0 1px rgba(245,197,66,.4);}
+.game:active{transform:scale(.99);}
+.game:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.g-icon{
+  width:54px;height:54px;flex:0 0 auto;border-radius:15px;display:grid;place-items:center;
+  background:linear-gradient(150deg,rgba(245,197,66,.22),rgba(232,160,32,.08));
+  box-shadow:inset 0 0 0 1px rgba(245,197,66,.28);color:var(--gold);
+}
+.g-icon svg{width:27px;height:27px;}
+.g-main{flex:1;min-width:0;}
+.g-name{font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.15;}
+.g-desc{font-size:12.5px;color:var(--foam-dim);margin-top:3px;line-height:1.45;}
+.g-go{
+  width:34px;height:34px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--gold),var(--amber));color:#2a1c06;
+  box-shadow:0 6px 16px -6px rgba(232,160,32,.7);
+}
+.g-go svg{width:16px;height:16px;}
+
+.foot{text-align:center;font-size:11.5px;color:var(--foam-dim);line-height:1.6;}
+.foot .rule{
+  height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);
+  margin:0 0 14px;
+}
+@media (prefers-reduced-motion:reduce){.game{transition:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/>
+        <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/>
+        <path d="M5 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+      </svg>
+    </div>
+    <div>
+      <div class="kicker">Madeira</div>
+      <h1>Gringo <span class="accent">Games</span></h1>
+    </div>
+    <p class="tagline">Two bar games. One glass. Pick your poison.</p>
+  </header>
+
+  <main class="games">
+    <a class="game" href="perfect-pour.html">
+      <div class="g-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 11h1a3 3 0 0 1 0 6h-1"/>
+          <path d="M5 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+          <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/>
+        </svg>
+      </div>
+      <div class="g-main">
+        <div class="g-name">Perfect Pour</div>
+        <div class="g-desc">Hold to pour, stop at exactly 500 ml. Closest pour tops the group leaderboard.</div>
+      </div>
+      <div class="g-go">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </a>
+
+    <a class="game" href="bar-tilt.html">
+      <div class="g-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2" fill="currentColor" stroke="none"/>
+          <path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7"/>
+        </svg>
+      </div>
+      <div class="g-main">
+        <div class="g-name">Bar Tilt</div>
+        <div class="g-desc">Pinball on a bar top. Smack the caps, clear the hops, fill the glass to 500 ml.</div>
+      </div>
+      <div class="g-go">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </a>
+  </main>
+
+  <footer class="foot">
+    <div class="rule"></div>
+    Best on your phone. Scores stay on your device.<br>Pour responsibly. 🍻
+  </footer>
+</div>
+</body>
+</html>
